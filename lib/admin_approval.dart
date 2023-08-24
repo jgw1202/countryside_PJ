@@ -218,7 +218,7 @@ class ItemCard extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: 52,
+                  width: 30,
                 ),
                 Text(
                   '외국인등록번호\n-------------------\n${itemList[i].registrationNumber}',
@@ -229,7 +229,7 @@ class ItemCard extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: 52,
+                  width: 30,
                 ),
                 Text(
                   '발급일자\n-----------\n${itemList[i].issueDate}',
