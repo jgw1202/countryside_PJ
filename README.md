@@ -1,16 +1,11 @@
 # hackerton_pj
 
-A new Flutter project.
+농촌모여 프로젝트
 
-## Getting Started
+농촌에서의 인력 부족으로 인한 문제를 인지하고, 이에 대한 해결책으로
 
-This project is a starting point for a Flutter application.
+젊은 사람이나, 외국인 노동자 등 좋은 인력들을 농촌에 배치함에 있어서 농촌 발전에 이바지함
 
-A few resources to get you started if this is your first Flutter project:
+불법체류자 검증을 통해 옳지 못한 방법의 인력 보충 문제를 막을 수 있음.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
