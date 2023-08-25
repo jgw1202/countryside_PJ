@@ -58,29 +58,60 @@ class Board extends StatelessWidget {
             child: Container(
               height: 70.0, // Adjust the height as needed
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment:
+                    MainAxisAlignment.spaceAround, // Align items evenly
                 children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  HomePage())); // 홈페이지로 이동하는 코드
-                    },
-                    child: Column(
-                      children: [
-                        SizedBox(height: 15),
-                        Icon(Icons.home, color: Color(0xFF7AD6BF)),
-                        Text(
-                          "home",
-                          style: TextStyle(
-                            fontSize: 13,
-                            color: Color.fromRGBO(122, 214, 191, 1.0),
-                          ),
+                  Column(
+                    children: [
+                      SizedBox(height: 15),
+                      Icon(Icons.home, color: Color(0xFF7AD6BF)),
+                      Text(
+                        "home",
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Color.fromRGBO(122, 214, 191, 1.0),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      SizedBox(height: 15),
+                      Icon(Icons.map, color: Color(0xFF7AD6BF)),
+                      Text(
+                        "register",
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Color.fromRGBO(122, 214, 191, 1.0),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      SizedBox(height: 15),
+                      Icon(Icons.search, color: Color(0xFF7AD6BF)),
+                      Text(
+                        "Search",
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Color.fromRGBO(122, 214, 191, 1.0),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      SizedBox(height: 15),
+                      Icon(Icons.account_circle, color: Color(0xFF7AD6BF)),
+                      Text(
+                        "Profile",
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Color.fromRGBO(122, 214, 191, 1.0),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -157,6 +188,11 @@ class _ItemListState extends State<ItemList> {
     });
   }
 
+  List<String> urlList = [
+    'assets/images/farmField.jpg',
+    'assets/images/robot.jpg',
+    'assets/images/greenTea.jpg'
+  ];
   @override
   Widget build(BuildContext context) {
     return itemList != null
@@ -172,7 +208,7 @@ class _ItemListState extends State<ItemList> {
             itemBuilder: (context, index) {
               final currentItem = itemList[index];
               i = index;
-              return ItemCard(itemList, index, i);
+              return ItemCard(itemList, index, i, urlList[index % 3]);
             },
           )
         : Center(
@@ -185,8 +221,9 @@ class ItemCard extends StatelessWidget {
   final List<Item> itemList;
   final int index;
   final int i;
+  final String imgUrl;
 
-  ItemCard(this.itemList, this.index, this.i);
+  ItemCard(this.itemList, this.index, this.i, this.imgUrl);
 
   @override
   Widget build(BuildContext context) {
@@ -211,7 +248,7 @@ class ItemCard extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.asset(
-                    'assets/images/farmField.jpg',
+                    imgUrl,
                     height: 150,
                     width: double.infinity,
                     fit: BoxFit.cover,
@@ -220,7 +257,7 @@ class ItemCard extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Text(
-                itemList[i].region,
+                "지역 : ${itemList[i].region}",
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
                   color: Colors.black,
@@ -228,7 +265,7 @@ class ItemCard extends StatelessWidget {
                 ),
               ),
               Text(
-                itemList[i].title,
+                "공고 제목 : ${itemList[i].title}",
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
                   color: Colors.black,
@@ -236,7 +273,7 @@ class ItemCard extends StatelessWidget {
                 ),
               ),
               Text(
-                itemList[i].pay,
+                "급여 : ${itemList[i].pay}",
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
                   color: Colors.black,
