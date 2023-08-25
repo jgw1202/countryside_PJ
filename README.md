@@ -11,7 +11,9 @@
 기술
 -------
 Front-End : Dart 언어를 이용한 Flutter 프레임워크 활
+
 Back-End : Spring boot를 이용한 Rest Api 구현 / Json을 활용한 http 통신 / Spring boot에 H2 database를 설정하여 DB 구축
+
 Design : Figma를 이용한 디자인 개발
 
 
