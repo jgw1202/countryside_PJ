@@ -87,12 +87,12 @@ class _SearchPageState extends State<SearchPage> {
         padding: EdgeInsets.all(16),
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 30.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: 40,
+                  height: 80,
                 ),
                 Row(
                   children: [
@@ -116,7 +116,7 @@ class _SearchPageState extends State<SearchPage> {
                   ],
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 30,
                 ),
                 Text("검색 정보를 입력해 주세요.",
                     style:
@@ -158,12 +158,12 @@ class _SearchPageState extends State<SearchPage> {
                               borderRadius: BorderRadius.circular(10),
                             ),
                             // 버튼의 크기 조절을 더욱 정교하게 하려면 아래의 값을 조정하세요.
-                            minimumSize: Size(120, 60), // 가로 크기 조절
+                            minimumSize: Size(80, 5), // 가로 크기 조절
                           ),
                           child: Text(
                             "검색",
                             style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
+                                fontSize: 15, fontWeight: FontWeight.bold),
                           ),
                         ),
                       ],
@@ -288,12 +288,12 @@ class _SearchPageState extends State<SearchPage> {
                               borderRadius: BorderRadius.circular(10),
                             ),
                             // 버튼의 크기 조절을 더욱 정교하게 하려면 아래의 값을 조정하세요.
-                            minimumSize: Size(120, 60), // 가로 크기 조절
+                            minimumSize: Size(80, 5), // 가로 크기 조절
                           ),
                           child: Text(
                             "검색",
                             style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
+                                fontSize: 15, fontWeight: FontWeight.bold),
                           ),
                         ),
                       ],
@@ -306,7 +306,9 @@ class _SearchPageState extends State<SearchPage> {
                 Container(
                   width: 150, // Set the desired width
                   height: 300, // Set the desired height
-                  child: Image.asset('assets/images/map.png'),
+                  child: Image.asset(
+                    'assets/images/newMap.png',
+                  ),
                 )
               ],
             ),
@@ -322,27 +324,62 @@ class _SearchPageState extends State<SearchPage> {
           shape: CircularNotchedRectangle(),
           color: Color(0xFFD0F5EC),
           child: Container(
-            height: 70.0,
+            height: 70.0, // Adjust the height as needed
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment:
+                  MainAxisAlignment.spaceAround, // Align items evenly
               children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/home'); // 홈페이지로 이동하는 코드
-                  },
-                  child: Column(
-                    children: [
-                      SizedBox(height: 15),
-                      Icon(Icons.home, color: Color(0xFF7AD6BF)),
-                      Text(
-                        "home",
-                        style: TextStyle(
-                          fontSize: 13,
-                          color: Color.fromRGBO(122, 214, 191, 1.0),
-                        ),
+                Column(
+                  children: [
+                    SizedBox(height: 15),
+                    Icon(Icons.home, color: Color(0xFF7AD6BF)),
+                    Text(
+                      "home",
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: Color.fromRGBO(122, 214, 191, 1.0),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    SizedBox(height: 15),
+                    Icon(Icons.map, color: Color(0xFF7AD6BF)),
+                    Text(
+                      "register",
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: Color.fromRGBO(122, 214, 191, 1.0),
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    SizedBox(height: 15),
+                    Icon(Icons.search, color: Color(0xFF7AD6BF)),
+                    Text(
+                      "Search",
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: Color.fromRGBO(122, 214, 191, 1.0),
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    SizedBox(height: 15),
+                    Icon(Icons.account_circle, color: Color(0xFF7AD6BF)),
+                    Text(
+                      "Profile",
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: Color.fromRGBO(122, 214, 191, 1.0),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
