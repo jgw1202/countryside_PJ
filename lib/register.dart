@@ -599,27 +599,62 @@ class _RegistrationPageState extends State<RegistrationPage> {
           shape: CircularNotchedRectangle(),
           color: Color(0xFFD0F5EC),
           child: Container(
-            height: 70.0,
+            height: 70.0, // Adjust the height as needed
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment:
+                  MainAxisAlignment.spaceAround, // Align items evenly
               children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/home'); // 홈페이지로 이동하는 코드
-                  },
-                  child: Column(
-                    children: [
-                      SizedBox(height: 15),
-                      Icon(Icons.home, color: Color(0xFF7AD6BF)),
-                      Text(
-                        "home",
-                        style: TextStyle(
-                          fontSize: 13,
-                          color: Color.fromRGBO(122, 214, 191, 1.0),
-                        ),
+                Column(
+                  children: [
+                    SizedBox(height: 15),
+                    Icon(Icons.home, color: Color(0xFF7AD6BF)),
+                    Text(
+                      "home",
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: Color.fromRGBO(122, 214, 191, 1.0),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    SizedBox(height: 15),
+                    Icon(Icons.map, color: Color(0xFF7AD6BF)),
+                    Text(
+                      "register",
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: Color.fromRGBO(122, 214, 191, 1.0),
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    SizedBox(height: 15),
+                    Icon(Icons.search, color: Color(0xFF7AD6BF)),
+                    Text(
+                      "Search",
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: Color.fromRGBO(122, 214, 191, 1.0),
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    SizedBox(height: 15),
+                    Icon(Icons.account_circle, color: Color(0xFF7AD6BF)),
+                    Text(
+                      "Profile",
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: Color.fromRGBO(122, 214, 191, 1.0),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
