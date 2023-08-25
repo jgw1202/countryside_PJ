@@ -170,117 +170,11 @@ class _HomePageState extends State<HomePage> {
                 height: 2.0,
                 color: Color.fromRGBO(122, 214, 191, 1.0),
               ),
-              SizedBox(height: 30),
-              Center(
-                child: Container(
-                  width: 372,
-                  height: 225, // 높이를 늘림
-                  padding: EdgeInsets.all(16.0),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20.0),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 3,
-                        blurRadius: 7,
-                        offset: Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  child: Row(
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "이름",
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(height: 5),
-                          Text(
-                            "나이",
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(height: 5),
-                          Text(
-                            "소속",
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(height: 5),
-                          Text(
-                            "돕기 이력",
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Container(
-                        width: 1,
-                        height: double.infinity,
-                        color: Color.fromRGBO(122, 214, 191, 1.0),
-                        margin: EdgeInsets.symmetric(horizontal: 10.0),
-                      ),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "인하소",
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            SizedBox(height: 5),
-                            Text(
-                              "23",
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            SizedBox(height: 5),
-                            Text(
-                              "인하대학교",
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            SizedBox(height: 5),
-                            Text(
-                              "인천광역시 미추홀구 사과농장...\n단양군 가곡면 사평2리 마늘뽑기...",
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(width: 10),
-                      Image.asset(
-                        'assets/images/cow.png',
-                        width: 80,
-                        height: 80,
-                      ),
-                    ],
-                  ),
-                ),
+              SizedBox(height: 10),
+              Image.asset(
+                "assets/images/profile.png",
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 10),
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 20.0),
                 height: 2.0,
@@ -345,7 +239,8 @@ class _HomePageState extends State<HomePage> {
           child: Container(
             height: 70.0, // Adjust the height as needed
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment:
+                  MainAxisAlignment.spaceAround, // Align items evenly
               children: [
                 Column(
                   children: [
@@ -353,6 +248,45 @@ class _HomePageState extends State<HomePage> {
                     Icon(Icons.home, color: Color(0xFF7AD6BF)),
                     Text(
                       "home",
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: Color.fromRGBO(122, 214, 191, 1.0),
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    SizedBox(height: 15),
+                    Icon(Icons.map, color: Color(0xFF7AD6BF)),
+                    Text(
+                      "register",
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: Color.fromRGBO(122, 214, 191, 1.0),
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    SizedBox(height: 15),
+                    Icon(Icons.search, color: Color(0xFF7AD6BF)),
+                    Text(
+                      "Search",
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: Color.fromRGBO(122, 214, 191, 1.0),
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    SizedBox(height: 15),
+                    Icon(Icons.account_circle, color: Color(0xFF7AD6BF)),
+                    Text(
+                      "Profile",
                       style: TextStyle(
                         fontSize: 13,
                         color: Color.fromRGBO(122, 214, 191, 1.0),
