@@ -99,12 +99,15 @@ class ScaffoldWithTabs extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Image.network(
-                'assets/images/riceField.jpeg',
-                height: 150,
+              child: Image.asset(
+                'assets/images/farmField.jpg',
+                height: 300,
                 width: double.infinity,
                 fit: BoxFit.cover,
               ),
+            ),
+            SizedBox(
+              height: 20,
             ),
             TabBar(
               labelColor: Colors.black,
@@ -135,29 +138,60 @@ class ScaffoldWithTabs extends StatelessWidget {
             child: Container(
               height: 70.0, // Adjust the height as needed
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment:
+                    MainAxisAlignment.spaceAround, // Align items evenly
                 children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  HomePage())); // 홈페이지로 이동하는 코드
-                    },
-                    child: Column(
-                      children: [
-                        SizedBox(height: 15),
-                        Icon(Icons.home, color: Color(0xFF7AD6BF)),
-                        Text(
-                          "home",
-                          style: TextStyle(
-                            fontSize: 13,
-                            color: Color.fromRGBO(122, 214, 191, 1.0),
-                          ),
+                  Column(
+                    children: [
+                      SizedBox(height: 15),
+                      Icon(Icons.home, color: Color(0xFF7AD6BF)),
+                      Text(
+                        "home",
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Color.fromRGBO(122, 214, 191, 1.0),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      SizedBox(height: 15),
+                      Icon(Icons.map, color: Color(0xFF7AD6BF)),
+                      Text(
+                        "register",
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Color.fromRGBO(122, 214, 191, 1.0),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      SizedBox(height: 15),
+                      Icon(Icons.search, color: Color(0xFF7AD6BF)),
+                      Text(
+                        "Search",
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Color.fromRGBO(122, 214, 191, 1.0),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      SizedBox(height: 15),
+                      Icon(Icons.account_circle, color: Color(0xFF7AD6BF)),
+                      Text(
+                        "Profile",
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Color.fromRGBO(122, 214, 191, 1.0),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -174,32 +208,25 @@ Widget _buildInfoRow(dynamic label, String value) {
     padding: const EdgeInsets.symmetric(vertical: 5),
     child: Row(
       children: [
-        SizedBox(width: 10),
-        Flexible(
-          flex: 1,
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              label,
-              style: TextStyle(
-                fontWeight: FontWeight.w500,
-                color: Color(0xFF7AD6BF),
-                fontSize: 15,
-              ),
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Text(
+            label,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF7AD6BF),
+              fontSize: 19,
             ),
           ),
         ),
-        Flexible(
-          flex: 10,
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              value,
-              style: TextStyle(
-                fontWeight: FontWeight.w500,
-                color: Colors.black,
-                fontSize: 15,
-              ),
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Text(
+            value,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+              fontSize: 19,
             ),
           ),
         ),
@@ -279,16 +306,46 @@ class _RecruitPageState extends State<RecruitPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildInfoRow("제목", recruit.title),
-            _buildInfoRow("지역", recruit.region),
-            _buildInfoRow("마감일", recruit.deadline),
-            _buildInfoRow("기간", recruit.workTerm),
-            _buildInfoRow("요일", recruit.workDay),
-            _buildInfoRow("시간", recruit.workHour),
-            _buildInfoRow("급여", recruit.pay.toString()),
-            _buildInfoRow("유형", recruit.type),
-            _buildInfoRow("식사 제공", recruit.meal.toString()),
-            _buildInfoRow("숙박 제공", recruit.room.toString()),
+            SizedBox(
+              height: 20,
+            ),
+            _buildInfoRow("제목          ", recruit.title),
+            SizedBox(
+              height: 5,
+            ),
+            _buildInfoRow("지역          ", recruit.region),
+            SizedBox(
+              height: 5,
+            ),
+            _buildInfoRow("마감일       ", recruit.deadline),
+            SizedBox(
+              height: 5,
+            ),
+            _buildInfoRow("기간           ", recruit.workTerm),
+            SizedBox(
+              height: 5,
+            ),
+            _buildInfoRow("요일          ", recruit.workDay),
+            SizedBox(
+              height: 5,
+            ),
+            _buildInfoRow("시간          ", recruit.workHour),
+            SizedBox(
+              height: 5,
+            ),
+            _buildInfoRow("급여          ", recruit.pay.toString()),
+            SizedBox(
+              height: 5,
+            ),
+            _buildInfoRow("유형          ", recruit.type),
+            SizedBox(
+              height: 5,
+            ),
+            _buildInfoRow("식사 제공  ", recruit.meal.toString()),
+            SizedBox(
+              height: 5,
+            ),
+            _buildInfoRow("숙박 제공  ", recruit.room.toString()),
           ],
         ),
       ),
@@ -342,8 +399,14 @@ class _FarmPageState extends State<FarmPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildInfoRow("연락처", farm.creatorNumber.toString()),
-            _buildInfoRow("장소", farm.location),
+            SizedBox(
+              height: 20,
+            ),
+            _buildInfoRow("연락처 :       ", farm.creatorNumber.toString()),
+            SizedBox(
+              height: 5,
+            ),
+            _buildInfoRow("장소 :          ", farm.location),
           ],
         ),
       ),
